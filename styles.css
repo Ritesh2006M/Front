@@ -12,7 +12,6 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -67,7 +66,6 @@ body {
     background-color: #cc5200;
 }
 
-
 header {
     height: 100vh;
     display: flex;
@@ -76,9 +74,9 @@ header {
     color: white;
     text-align: center;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    padding: 0 20px;
 }
-
 
 .bg-video {
     position: absolute;
@@ -131,32 +129,34 @@ header p {
     padding: 0 20px;
 }
 
+#key-features .row {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#how-it-works .row {
+    width: 75%;
+    margin: 0 auto;
+}
+
 .glass-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     padding: 20px;
-    color: black;
     text-align: center;
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(10px);
 }
 
-.glass-card h3 {
-    margin-bottom: 10px;
-}
-
-.glass-card p {
-    margin-top: 0;
+.key-feature-card, .how-it-works-card {
+    margin: 10px;
+    transition: transform 0.4s ease;
 }
 
 .glass-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 24px rgba(31, 38, 135, 0.57);
 }
 
 .btn-animate {
@@ -203,40 +203,65 @@ footer {
     color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
+
     header h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     header p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+
+    .container {
+        padding: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     .centered-paragraph {
         max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        display: block;
-        padding: 0 20px;
+        padding: 0 15px;
+    }
+
+    #key-features, #how-it-works {
+        padding: 40px 0; /* Adding padding to ensure sections are well separated */
+        clear: both; /* Ensure no floating elements overlap */
+        margin-top: 40px; /* Extra spacing between sections */
     }
 
     .glass-card {
-        width: 90%;
-        height: auto;
-        margin: 10px auto;
-    }
-
-    header {
+        width: 100%;
+        margin: 30px 0;
         padding: 20px;
     }
 
-    .header-content {
-        max-width: 90%;
+    .btn-animate {
+        padding: 10px 15px;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
     }
 
-    .login-btn {
-        width: auto;
-        padding: 8px 12px;
+    footer {
+        padding: 20px;
+        margin-top: 50px;
         font-size: 0.9rem;
     }
 }
